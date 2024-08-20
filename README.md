@@ -204,8 +204,45 @@ public final class SamplePreferencesSharedPref(
     }
   }
 }
+```
 
 
+### 3. Accessing Your Preferences
+
+Once the code is generated, you can use the generated class to access your shared preferences.
+
+Here’s a sample usage in an `AppCompatActivity`:
+
+```kotlin
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+
+class MainActivity : AppCompatActivity() {
+    // Lazy initialization of the generated preferences helper class
+    private val samplePreferencesSharedPref: SamplePreferencesSharedPref by lazy { SamplePreferencesSharedPref(this) }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge() // Custom method to enable edge-to-edge mode
+        setContentView(R.layout.activity_main)
+        
+        // Adjust padding to avoid system bars overlap
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+
+        // Set all the values in SharedPreferences
+        samplePreferencesSharedPref.setUsername("Sitharaj Seenivasan")
+        samplePreferencesSharedPref.setAge(120)
+        samplePreferencesSharedPref.setHeight(10.0f)
+        samplePreferencesSharedPref.setIsLoggedIn(true)
         samplePreferencesSharedPref.setUserSet(setOf("Developer", "Open source contributor"))
 
         // Print all the values from SharedPreferences
@@ -246,5 +283,3 @@ Contributions are welcome! Please feel free to submit a pull request or open an 
 **Sitharaj Seenivasan**
 
 - [GitHub](https://github.com/sitharaj88)
-
-
