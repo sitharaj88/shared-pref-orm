@@ -14,6 +14,7 @@ constraintlayout = "2.1.4"
 jetbrainsKotlinJvm = "1.9.0"
 kotlinStd = "2.0.0"
 kotlinPoet = "1.18.1"
+sharedPrefOrm = "1.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -29,6 +30,7 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 kotlin-std = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlinStd" }
 kotlin-poet = { group = "com.squareup", name = "kotlinpoet", version.ref = "kotlinPoet" }
 kotlin-poet-kapt = { group = "com.squareup", name = "kotlinpoet-kapt", version.ref = "kotlinPoet" }
+shared-pref-orm = { module = "com.github.sitharaj88:shared-pref-orm", version.ref = "sharedPrefOrm" }
 
 
 

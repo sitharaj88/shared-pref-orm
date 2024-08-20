@@ -44,8 +44,11 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
-    implementation(project(":sharedpreform"))
-    kapt(project(":sharedpreform"))
+//    implementation(project(":sharedpreform"))
+//    kapt(project(":sharedpreform"))
+
+    implementation(libs.shared.pref.orm)
+    kapt(libs.shared.pref.orm)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
