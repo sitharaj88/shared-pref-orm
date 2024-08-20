@@ -1,2 +1,2 @@
 install:
-  - ./gradlew clean :sharedpreform:assembleRelease :sharedpreform:publish
+  - ./gradlew clean :sharedpreform:assemble :sharedpreform:publish
